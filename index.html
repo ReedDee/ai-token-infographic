@@ -1,0 +1,498 @@
+give the code to copy for github and the steps
+
+11:35
+
+Get the full HTML file content
+Get the full HTML file content
+
+Get the full HTML file content
+bash
+
+cat /mnt/user-data/outputs/ai_token_pricing_infographic.html
+Output
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding AI Tokens — Procurement Guide by Ray Daiboun</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f4f0;
+    color: #1a1a18;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 0.5px solid #d3d1c7;
+    overflow: hidden;
+  }
+
+  /* Author banner */
+  .author-bar {
+    background: #0A66C2;
+    padding: 1.1rem 2rem;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; gap: .75rem;
+  }
+  .author-left { display: flex; align-items: center; gap: .875rem; }
+  .author-avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: #2A9D8F;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 500; color: #fff;
+    flex-shrink: 0; overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+  .author-avatar img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
+  .author-label { font-size:10px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:#D4A843; margin-bottom:2px; }
+  .author-name  { font-size:15px; font-weight:500; color:#fff; }
+  .author-linkedin {
+    display:flex; align-items:center; gap:7px;
+    text-decoration:none;
+    background:rgba(255,255,255,0.07);
+    border:0.5px solid rgba(255,255,255,0.18);
+    border-radius:8px; padding:6px 14px;
+    transition:background .2s;
+  }
+  .author-linkedin:hover { background:rgba(255,255,255,0.14); }
+  .li-icon { width:16px; height:16px; flex-shrink:0; }
+  .author-linkedin span { font-size:12px; font-weight:500; color:#fff; }
+
+  /* Body */
+  .body { padding: 2rem 2.5rem 2.5rem; }
+
+  .hero {
+    background:#f0f0f0; border:0.5px solid #d3d1c7; border-radius:12px;
+    padding:1.5rem 2rem; margin-bottom:1.75rem;
+    display:flex; justify-content:space-between; align-items:flex-start;
+    flex-wrap:wrap; gap:1rem;
+  }
+  .hero-title { font-size:22px; font-weight:500; color:#1a1a18; margin-bottom:5px; }
+  .hero-sub   { font-size:14px; color:#5f5e5a; }
+  .hero-tag   { font-size:11px; font-weight:500; padding:4px 10px; border-radius:6px; background:#e6f1fb; color:#185fa5; white-space:nowrap; align-self:flex-start; }
+
+  .section-label { font-size:11px; font-weight:500; letter-spacing:.07em; color:#888780; text-transform:uppercase; margin:2rem 0 .875rem; }
+
+  /* Token demo */
+  .token-demo { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:1.25rem; }
+  .tok { padding:5px 12px; border-radius:6px; font-size:13px; font-weight:500; border:0.5px solid; white-space:nowrap; }
+  .tok-a { background:#E6F1FB; color:#0C447C; border-color:#B5D4F4; }
+  .tok-b { background:#E1F5EE; color:#085041; border-color:#9FE1CB; }
+  .tok-c { background:#E8F4FD; color:#0C447C; border-color:#B5D4F4; }
+  .tok-d { background:#FAECE7; color:#712B13; border-color:#F5C4B3; }
+  .tok-e { background:#EEEDFE; color:#3C3489; border-color:#CECBF6; }
+  .tok-eq { font-size:13px; color:#888780; }
+
+  .stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .stat { background:#f0f0f0; border-radius:10px; padding:1rem 1.25rem; border:0.5px solid #d3d1c7; }
+  .stat-num { font-size:22px; font-weight:500; font-family:'DM Mono',monospace; color:#1a1a18; }
+  .stat-lbl { font-size:12px; color:#5f5e5a; margin-top:3px; }
+
+  /* Flow */
+  .flow { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:1rem 0 .4rem; }
+  .flow-box { padding:6px 14px; border-radius:8px; font-size:12px; font-weight:500; border:0.5px solid #6B7280; background:#4B5563; color:#ffffff; white-space:nowrap; }
+  .flow-arrow { font-size:12px; color:#b4b2a9; }
+  .flow-in  { background:#1876D2; color:#ffffff; border-color:#1876D2; }
+  .flow-out { background:#E8440A; color:#ffffff; border-color:#E8440A; }
+  .flow-note { font-size:12px; color:#888780; margin-top:4px; }
+
+  /* Provider grid */
+  .provider-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: .75rem;
+  }
+
+  .pcard { background:#fff; border:0.5px solid #d3d1c7; border-radius:12px; overflow:hidden; }
+
+  /* Card header — taller now to fit 3 lines */
+  .pcard-head { padding:.875rem 1rem 1rem; border-bottom:0.5px solid #d3d1c7; }
+  .pcard-name { font-size:13px; font-weight:500; white-space:nowrap; margin-bottom:3px; }
+  .pcard-sub  { font-size:10px; color:#888780; margin-bottom:6px; }
+
+  /* Best used for line */
+  .pcard-best-label {
+    font-size:9px; font-weight:500; letter-spacing:.06em;
+    text-transform:uppercase; margin-bottom:3px;
+    opacity:.7;
+  }
+  .pcard-best {
+    font-size:11px;
+    font-weight:500;
+    line-height:1.45;
+  }
+
+  /* Colour variants */
+  .pcard-ant .pcard-head  { background:#FAECE7; border-bottom-color:#F5C4B3; }
+  .pcard-ant .pcard-name  { color:#712B13; }
+  .pcard-ant .pcard-best-label { color:#993C1D; }
+  .pcard-ant .pcard-best  { color:#712B13; }
+
+  .pcard-oai .pcard-head  { background:#E6F1FB; border-bottom-color:#B5D4F4; }
+  .pcard-oai .pcard-name  { color:#185FA5; }
+  .pcard-oai .pcard-best-label { color:#185FA5; }
+  .pcard-oai .pcard-best  { color:#0C447C; }
+
+  .pcard-goo .pcard-head  { background:#EAF3DE; border-bottom-color:#C0DD97; }
+  .pcard-goo .pcard-name  { color:#3B6D11; }
+  .pcard-goo .pcard-best-label { color:#3B6D11; }
+  .pcard-goo .pcard-best  { color:#27500A; }
+
+  .pcard-ppl .pcard-head  { background:#EEEDFE; border-bottom-color:#CECBF6; }
+  .pcard-ppl .pcard-name  { color:#3C3489; }
+  .pcard-ppl .pcard-best-label { color:#534AB7; }
+  .pcard-ppl .pcard-best  { color:#3C3489; }
+
+  .pcard-body { padding:.4rem .875rem; }
+
+  .model-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 0.5px solid #ebebeb;
+    gap: 6px;
+  }
+  .model-row:last-child { border-bottom: none; }
+  .model-left { display:flex; align-items:center; flex-wrap:nowrap; gap:4px; min-width:0; }
+  .model-name { font-size:11px; color:#1a1a18; white-space:nowrap; }
+  .model-tier { font-size:9px; padding:2px 5px; border-radius:4px; font-weight:500; white-space:nowrap; flex-shrink:0; }
+  .tier-fast { background:#EAF3DE; color:#3B6D11; }
+  .tier-bal  { background:#E6F1FB; color:#185FA5; }
+  .tier-top  { background:#EEEDFE; color:#3C3489; }
+  .tier-new  { background:#E8F4FD; color:#854F0B; }
+  .model-price { font-size:11px; font-family:'DM Mono',monospace; color:#1a1a18; font-weight:500; white-space:nowrap; flex-shrink:0; text-align:right; }
+  .model-price-sub { font-size:10px; color:#888780; font-weight:400; }
+
+  .perp-note { font-size:10px; color:#888780; padding:.4rem .875rem; border-top:0.5px solid #ebebeb; background:#f9f9f7; line-height:1.5; }
+
+  /* Notices */
+  .public-note {
+    background:#E8F4FD; border:0.5px solid #B5D4F4; border-radius:10px;
+    padding:.875rem 1.25rem; margin-bottom:1.25rem;
+    display:flex; gap:.75rem; align-items:flex-start;
+  }
+  .public-note-icon { font-size:14px; flex-shrink:0; margin-top:1px; }
+  .public-note-text { font-size:12px; color:#0C447C; line-height:1.6; }
+  .public-note-text strong { font-weight:500; }
+
+  /* Savings */
+  .savings { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .save-box { background:#f0f0f0; border-radius:10px; padding:.875rem 1rem; border:0.5px solid #d3d1c7; }
+  .save-pct  { font-size:18px; font-weight:500; font-family:'DM Mono',monospace; margin-bottom:4px; }
+  .save-name { font-size:12px; font-weight:500; margin-bottom:3px; color:#1a1a18; }
+  .save-desc { font-size:11px; color:#5f5e5a; line-height:1.5; }
+
+  /* Compare table */
+  .compare-table { width:100%; border-collapse:collapse; margin-bottom:1.25rem; font-size:12px; }
+  .compare-table th { text-align:left; padding:8px 12px; font-size:11px; font-weight:500; color:#888780; border-bottom:0.5px solid #d3d1c7; background:#f9f9f7; }
+  .compare-table td { padding:9px 12px; border-bottom:0.5px solid #ebebeb; color:#1a1a18; vertical-align:top; line-height:1.5; }
+  .compare-table tr:last-child td { border-bottom:none; }
+  .compare-table td:first-child { color:#5f5e5a; font-weight:500; width:22%; }
+  .compare-table td:nth-child(2) { width:39%; }
+  .compare-table td:nth-child(3) { width:39%; }
+  .col-pub { color:#185FA5 !important; font-weight:500 !important; }
+  .col-ent { color:#3B6D11 !important; font-weight:500 !important; }
+  .badge-pub { display:inline-block; font-size:10px; padding:2px 8px; border-radius:4px; background:#E6F1FB; color:#185FA5; font-weight:500; margin-bottom:4px; }
+  .badge-ent { display:inline-block; font-size:10px; padding:2px 8px; border-radius:4px; background:#EAF3DE; color:#3B6D11; font-weight:500; margin-bottom:4px; }
+
+  .footer-note { font-size:11px; color:#888780; border-top:0.5px solid #d3d1c7; padding-top:.875rem; margin-top:1.5rem; line-height:1.6; }
+
+  @media(max-width:700px){
+    .provider-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media(max-width:500px){
+    .body { padding:1.5rem 1rem; }
+    .author-bar { padding:.875rem 1rem; }
+    .provider-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .savings { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Author banner -->
+  <div class="author-bar">
+    <div class="author-left">
+      <div class="author-avatar"><img src="data:image/jpeg;base64,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" alt="Ray Daiboun" /></div>
+      <div>
+        <div class="author-label">Procurement guide</div>
+        <div class="author-name">Ray Daiboun</div>
+      </div>
+    </div>
+    <a class="author-linkedin" href="https://www.linkedin.com/in/ray-d/" target="_blank" rel="noopener">
+      <svg class="li-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="4" fill="#0A66C2"/>
+        <path d="M7.5 9.5H5V19H7.5V9.5Z" fill="white"/>
+        <circle cx="6.25" cy="6.75" r="1.5" fill="white"/>
+        <path d="M19 19H16.5V14C16.5 12.9 15.6 12 14.5 12C13.4 12 12.5 12.9 12.5 14V19H10V9.5H12.5V10.8C13.1 9.9 14.2 9.3 15.5 9.3C17.4 9.3 19 10.9 19 12.8V19Z" fill="white"/>
+      </svg>
+      <span>View on LinkedIn</span>
+    </a>
+  </div>
+
+  <div class="body">
+
+    <div class="hero">
+      <div>
+        <div class="hero-title">Understanding AI tokens</div>
+        <div class="hero-sub">What they are, how billing works, and current costs across major providers</div>
+      </div>
+      <div class="hero-tag">April 2026 · API pricing reference</div>
+    </div>
+
+    <!-- S1 -->
+    <div class="section-label">01 — What is a token?</div>
+    <div class="token-demo">
+      <span class="tok tok-a">Hello</span>
+      <span class="tok tok-b">token</span>
+      <span class="tok tok-c">ization</span>
+      <span class="tok tok-d">is</span>
+      <span class="tok tok-e">complex</span>
+      <span class="tok-eq">= 5 tokens · each colour = 1 token</span>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">~4</div><div class="stat-lbl">characters per token</div></div>
+      <div class="stat"><div class="stat-num">750</div><div class="stat-lbl">words per 1,000 tokens</div></div>
+      <div class="stat"><div class="stat-num">1.5</div><div class="stat-lbl">A4 pages per 1,000 tokens</div></div>
+    </div>
+
+    <!-- S2 -->
+    <div class="section-label">02 — How billing works</div>
+    <div class="flow">
+      <div class="flow-box">Your prompt</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box flow-in">Input tokens counted</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">AI responds</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box flow-out">Output tokens counted</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">Invoice</div>
+    </div>
+    <div class="flow-note">Output tokens typically cost 3–5× more than input tokens. Always budget for both.</div>
+
+    <!-- S3 -->
+    <div class="section-label">03 — Price comparison (USD per 1 million tokens · Input / Output)</div>
+
+    <div class="public-note">
+      <div class="public-note-icon">&#9432;</div>
+      <div class="public-note-text">
+        <strong>These are public API rates</strong> — standard pay-as-you-go prices available to anyone. Corporate and enterprise contracts are negotiated separately and are typically <strong>20–50% lower</strong> than the figures shown. See section 05 for the full breakdown.
+      </div>
+    </div>
+
+    <div class="provider-grid">
+
+      <!-- Anthropic -->
+      <div class="pcard pcard-ant">
+        <div class="pcard-head">
+          <div class="pcard-name">Anthropic Claude</div>
+          <div class="pcard-sub">Safety-focused · long context</div>
+          <div class="pcard-best-label">Best for</div>
+          <div class="pcard-best">Document analysis, coding, compliance &amp; long-context tasks</div>
+        </div>
+        <div class="pcard-body">
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Haiku 4.5</span><span class="model-tier tier-fast">fast</span></div>
+            <div class="model-price">$1 <span class="model-price-sub">/ $5</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Sonnet 4.6</span><span class="model-tier tier-bal">balanced</span></div>
+            <div class="model-price">$3 <span class="model-price-sub">/ $15</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Opus 4.6</span><span class="model-tier tier-top">flagship</span></div>
+            <div class="model-price">$5 <span class="model-price-sub">/ $25</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Opus 4.7</span><span class="model-tier tier-new">latest</span></div>
+            <div class="model-price">$5 <span class="model-price-sub">/ $25</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OpenAI -->
+      <div class="pcard pcard-oai">
+        <div class="pcard-head">
+          <div class="pcard-name">OpenAI GPT</div>
+          <div class="pcard-sub">Broad ecosystem · multimodal</div>
+          <div class="pcard-best-label">Best for</div>
+          <div class="pcard-best">General-purpose apps, vision, audio &amp; existing Microsoft integrations</div>
+        </div>
+        <div class="pcard-body">
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">GPT-4o mini</span><span class="model-tier tier-fast">fast</span></div>
+            <div class="model-price">$0.15 <span class="model-price-sub">/ $0.60</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">GPT-4o</span><span class="model-tier tier-bal">balanced</span></div>
+            <div class="model-price">$2.50 <span class="model-price-sub">/ $10</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">GPT-4.1</span><span class="model-tier tier-top">flagship</span></div>
+            <div class="model-price">$2 <span class="model-price-sub">/ $8</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google -->
+      <div class="pcard pcard-goo">
+        <div class="pcard-head">
+          <div class="pcard-name">Google Gemini</div>
+          <div class="pcard-sub">Most affordable · free tier</div>
+          <div class="pcard-best-label">Best for</div>
+          <div class="pcard-best">High-volume, cost-sensitive workloads &amp; Google Workspace users</div>
+        </div>
+        <div class="pcard-body">
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Flash-Lite 2.5</span><span class="model-tier tier-fast">fast</span></div>
+            <div class="model-price">$0.10 <span class="model-price-sub">/ $0.40</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Flash 3.0</span><span class="model-tier tier-bal">balanced</span></div>
+            <div class="model-price">$0.50 <span class="model-price-sub">/ $3</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Pro 2.5</span><span class="model-tier tier-top">flagship</span></div>
+            <div class="model-price">$1.25 <span class="model-price-sub">/ $10</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Pro 3.1</span><span class="model-tier tier-new">latest</span></div>
+            <div class="model-price">$2 <span class="model-price-sub">/ $12</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Perplexity -->
+      <div class="pcard pcard-ppl">
+        <div class="pcard-head">
+          <div class="pcard-name">Perplexity Sonar</div>
+          <div class="pcard-sub">Search-augmented AI</div>
+          <div class="pcard-best-label">Best for</div>
+          <div class="pcard-best">Real-time research, fact-checking &amp; cited answers from the web</div>
+        </div>
+        <div class="pcard-body">
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Sonar</span><span class="model-tier tier-fast">fast</span></div>
+            <div class="model-price">$1 <span class="model-price-sub">/ $1</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Reasoning Pro</span><span class="model-tier tier-bal">balanced</span></div>
+            <div class="model-price">$2 <span class="model-price-sub">/ $8</span></div>
+          </div>
+          <div class="model-row">
+            <div class="model-left"><span class="model-name">Sonar Pro</span><span class="model-tier tier-top">flagship</span></div>
+            <div class="model-price">$3 <span class="model-price-sub">/ $15</span></div>
+          </div>
+        </div>
+        <div class="perp-note">+ $0.005 per web search call. Includes live web results by default.</div>
+      </div>
+
+    </div>
+
+    <!-- S4 -->
+    <div class="section-label">04 — How to reduce costs</div>
+    <div class="savings">
+      <div class="save-box">
+        <div class="save-pct" style="color:#185FA5">−90%</div>
+        <div class="save-name">Prompt caching</div>
+        <div class="save-desc">Reuse repeated system prompts or documents at 10% of standard input cost</div>
+      </div>
+      <div class="save-box">
+        <div class="save-pct" style="color:#3B6D11">−50%</div>
+        <div class="save-name">Batch processing</div>
+        <div class="save-desc">Send non-urgent jobs asynchronously — all providers offer a 50% batch discount</div>
+      </div>
+      <div class="save-box">
+        <div class="save-pct" style="color:#712B13">−60%</div>
+        <div class="save-name">Right-size your model</div>
+        <div class="save-desc">Use fast/cheap models for simple tasks, flagship only when quality demands it</div>
+      </div>
+    </div>
+
+    <!-- S5 -->
+    <div class="section-label">05 — Public API vs enterprise / corporate pricing</div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th><span class="badge-pub">Public API</span><br>Pay-as-you-go</th>
+          <th><span class="badge-ent">Enterprise / Corporate</span><br>Negotiated contract</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Who it's for</td>
+          <td>Developers, startups, individuals — anyone with a credit card</td>
+          <td>Mid-to-large organisations with significant or committed AI spend</td>
+        </tr>
+        <tr>
+          <td>Pricing</td>
+          <td class="col-pub">Fixed, published rates — same for everyone</td>
+          <td class="col-ent">Negotiated and confidential — typically 20–50% below list price</td>
+        </tr>
+        <tr>
+          <td>Discounts</td>
+          <td>Batch processing (−50%) and prompt caching (−90%) only</td>
+          <td>Volume discounts, committed-use agreements, multi-year deals</td>
+        </tr>
+        <tr>
+          <td>Contract</td>
+          <td>None — stop anytime, no minimums</td>
+          <td>Annual or multi-year commitment, guaranteed minimum spend</td>
+        </tr>
+        <tr>
+          <td>Cloud route</td>
+          <td>Direct from provider (Anthropic, OpenAI, Google, Perplexity)</td>
+          <td>Via AWS, Azure, or Google Cloud — apply existing enterprise agreements</td>
+        </tr>
+        <tr>
+          <td>Support</td>
+          <td>Self-serve documentation and community forums</td>
+          <td>Dedicated account manager, priority SLA, onboarding assistance</td>
+        </tr>
+        <tr>
+          <td>Data &amp; privacy</td>
+          <td>Standard terms of service — data may be used to improve models</td>
+          <td>Custom DPA, data residency options, opt-out from model training</td>
+        </tr>
+        <tr>
+          <td>When to use</td>
+          <td>Prototyping, low-to-medium volume, variable workloads</td>
+          <td>Production at scale (&gt;$50k/year spend), compliance-sensitive use cases</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="public-note" style="margin-bottom:0">
+      <div class="public-note-icon">&#128204;</div>
+      <div class="public-note-text">
+        <strong>Procurement tip:</strong> If your organisation expects meaningful AI spend, contact each provider's enterprise sales team directly. Real corporate rates are never published. For organisations already on AWS, Azure, or Google Cloud enterprise agreements, accessing AI models through those platforms can unlock existing committed-spend discounts with no new contract needed.
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Public API prices in USD per 1M tokens · April 2026 · Enterprise rates are negotiated and will differ. Always verify published rates at each provider's official pricing page before budgeting. Output tokens cost more than input — model both in cost estimates. Perplexity Sonar includes live web search by default; factor per-request search fees into volume estimates.
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
